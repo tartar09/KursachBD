@@ -1,0 +1,38 @@
+﻿<Page x:Class="HelpMenu.HelpPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HelpMenu"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="910"
+      Title="HelpPage">
+
+	<Grid Background="White">
+		<RichTextBox Margin="62,59,62,59">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="В верхней левой части экрана приложения расположены пункты меню для навигации :"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="&quot;Справочники&quot; - в данном пункте отображены справочники с информацией о группах, званиях, степенях, отделах, должностях, категориях читателей и книг.   В каждом из них реализована возможность добавления, редактирования и удаления информации."/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="&quot;Данные&quot; - в данном пункте отображена информация об авторах, книгах и типах доступа к книгам.   Реализована возможность добавления авторов книг, выдачи и возврата книг, добавления типа доступа к книгам, а также экспорт данных в таблицы Excel. "/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="&quot;Документы&quot; - в данном пункте отображена информация о заказах и штрафах, реализована   возможность добалвения, редактирования, закрытия штрафа и заказа, а также экспорта штрафа в документ."/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="&quot;Клиенты&quot; - в данном пункте отображена информация о читателях библиотеки, реализована возможность добавить нового читателя в библиотеку, редактировать и удалять читателей."/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="&quot;Настройки&quot; - в данном пункте реализована возможность изменения настроек доступа для других пользователей или изменения пароля"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="&quot;Разное&quot; - в данном пункте отображена информация о программе и справка."/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+	</Grid>
+</Page>

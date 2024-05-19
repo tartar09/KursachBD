@@ -1,0 +1,33 @@
+﻿<Page x:Class="BooksCatalogsMenu.BooksCatalogControlPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BooksCatalogsMenu"
+      mc:Ignorable="d"
+      d:DesignHeight="500" d:DesignWidth="910"
+      Title="{Binding Tittle}">
+
+    <Grid Background="White">
+        <Button x:Name="LogOutButton" Content="Выйти" Style="{StaticResource StyleButtonExit}" HorizontalAlignment="Right" Margin="0,0,50,50" VerticalAlignment="Bottom" Width="188" Height="36" Command="{Binding LogOutCommand}"/>
+        <DataGrid x:Name="MainTable" Margin="50,104,0,50" Style="{StaticResource CustomDataGridStyle}" VerticalAlignment="Bottom" HorizontalAlignment="Left" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" MaxHeight="385" Width="591" Height="346">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="45"/>
+                <DataGridTextColumn Header="Название книги" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Категория" Binding="{Binding CategoryName}" Width="180"/>
+                <DataGridTextColumn Header="Издательство" Binding="{Binding PublishInfo}" Width="220"/>
+                <DataGridTextColumn Header="Количество" Binding="{Binding BooksCount}" Width="200"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="AddButton" Content="Добавить" HorizontalAlignment="Right" Style="{StaticResource StyleButtonEdit}" Margin="0,217,50,0" VerticalAlignment="Top" Width="188" Height="38"/>
+        <Button x:Name="EditButton" Content="Редактировать" HorizontalAlignment="Right" Style="{StaticResource StyleButtonEdit}" Margin="0,263,50,0" VerticalAlignment="Top" Width="188" Height="37"/>
+        <Button x:Name="DeleteButton" Content="Удалить" HorizontalAlignment="Right" Style="{StaticResource StyleButtonEdit}" Margin="0,309,50,0" VerticalAlignment="Top" Width="188" Height="37"/>
+        <Button x:Name="ReadButton" Content="Инфомация" HorizontalAlignment="Left" Margin="405,10,0,0" VerticalAlignment="Top" Width="96" Height="37" Visibility="Hidden"/>
+        <Button x:Name="GiveButton" Content="Выдать книгу"  Style="{StaticResource StyleButtonOk}" HorizontalAlignment="Right" Margin="0,172,50,0" VerticalAlignment="Top" Width="188"  Height="37"/>
+        <TextBox x:Name="BookName" Style="{StaticResource StyleTextBoxBorder}" Height="24" HorizontalAlignment="Left" Margin="50,42,0,0" TextWrapping="Wrap" Text="{Binding BookName}" VerticalAlignment="Top" Width="193"/>
+        <Label Content="Поиск по названию:" HorizontalAlignment="Left" Margin="50,18,0,0" VerticalAlignment="Top" Height="24"/>
+        <Button x:Name="FindButton" Content="Поиск" Style="{StaticResource StyleButtonOk}" HorizontalAlignment="Left" Margin="254,40,0,0" VerticalAlignment="Top" Width="98" Height="27"/>
+        <Button x:Name="ExportButton" Content="Экспорт в таблицу" Style="{StaticResource StyleButtonOk}" Margin="0,104,50,0" VerticalAlignment="Top" Width="188" HorizontalAlignment="Right" Height="36"/>
+    </Grid>
+</Page>

@@ -1,0 +1,32 @@
+﻿<Page x:Class="HelpMenu.AboutPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HelpMenu"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="910"
+      Title="AboutPage">
+
+	<Grid Background="White">
+		<RichTextBox Margin="62,59,62,59">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="Данное приложение было разработано студенткой 3 курса НГТУ в соответствии с требованиями, предъявляемыми к разработке программных приложений, а также методическими указаниями по выполнению курсовой  работы для студентов направлений 09.03.01 Информатика и  вычислительная техника и 09.03.03 Прикладная информатика."/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="Кафедра: Автоматизированных систем управления"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="Дисциплина: Базы данных"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="Группа: АП-126"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="Тарасова Кристина Дмитриевна"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+	</Grid>
+</Page>

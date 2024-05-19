@@ -1,0 +1,31 @@
+﻿<Page x:Class="AccessControlMenu.AccessControlPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AccessControlMenu"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="910"
+      Title="{Binding Tittle}">
+
+	<Grid Background="White">
+        <Button x:Name="LogOutButton" Content="Выйти" Style="{StaticResource StyleButtonExit}" HorizontalAlignment="Right" Margin="0,32,50,0" VerticalAlignment="Top" Width="114" Height="36" Command="{Binding LogOutCommand}"/>
+        <DataGrid x:Name="MainTable" Style="{StaticResource CustomDataGridStyle}" Margin="50,85,50,50" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" MaxHeight="385">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="#" Binding="{Binding Id}" Width="25"/>
+				<DataGridTextColumn Header="Пользователь" Binding="{Binding User.Login}" Width="*"/>
+				<DataGridTextColumn Header="Меню" Binding="{Binding MenuItem.Name}" Width="*"/>
+				<DataGridCheckBoxColumn Header="Чтение" Binding="{Binding Read}" Width="*"/>
+				<DataGridCheckBoxColumn Header="Запись" Binding="{Binding Add}"  Width="*"/>
+				<DataGridCheckBoxColumn Header="Редактирование" Binding="{Binding Edit}" Width="*"/>
+				<DataGridCheckBoxColumn Header="Удаление" Binding="{Binding Delete}" Width="*"/>
+			</DataGrid.Columns>
+		</DataGrid>
+
+        <Button x:Name="AddButton" Content="Новый доступ" HorizontalAlignment="Left" Margin="51,32,0,0" VerticalAlignment="Top" Width="146" Height="37" Style="{StaticResource StyleButtonOk}"/>
+        <Button x:Name="EditButton" Content="Редактировать" HorizontalAlignment="Left" Margin="206,32,0,0" VerticalAlignment="Top" Width="162" Height="37" Style="{StaticResource StyleButtonEdit}"/>
+        <Button x:Name="DeleteButton" Content="Удалить" HorizontalAlignment="Left" Margin="379,32,0,0" VerticalAlignment="Top" Width="128" Height="37" Style="{StaticResource StyleButtonEdit}"/>
+        <Button x:Name="ReadButton" Content="Инфомация" HorizontalAlignment="Left" Margin="133,10,0,0" VerticalAlignment="Top" Width="128" Height="37" Visibility="Hidden"/>
+	</Grid>
+</Page>
+

@@ -1,0 +1,33 @@
+﻿<Page x:Class="PenaltiesMenu.PenaltyControlPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PenaltiesMenu"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="910"
+      Title="{Binding Tittle}">
+
+    <Grid Background="White" Margin="0,0,0,0">
+        <Button x:Name="LogOutButton" Content="Выйти" Style="{StaticResource StyleButtonExit}" HorizontalAlignment="Right" Margin="0,0,50,50" VerticalAlignment="Bottom" Width="188" Height="36" Command="{Binding LogOutCommand}"/>
+        <DataGrid x:Name="MainTable" Margin="50,50,0,50" Style="{StaticResource CustomDataGridStyle}" HorizontalAlignment="Left" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" Width="574" Height="400">
+            <DataGrid.CellStyle>
+                <Style/>
+            </DataGrid.CellStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="30" MinWidth="0"/>
+                <DataGridTextColumn Header="ФИО" Binding="{Binding FullReaderName}" Width="*" MinWidth="15"/>
+                <DataGridTextColumn Header="Размер штрафа" Binding="{Binding Value}" Width="*"/>
+                <DataGridTextColumn Header="Дата" Binding="{Binding Date}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="AddButton" Content="Назначить штраф" Style="{StaticResource StyleButtonOk}" HorizontalAlignment="Right" Margin="0,144,50,0" VerticalAlignment="Top" Width="188" Height="37"/>
+        <Button x:Name="EditButton" Content="Редактировать" HorizontalAlignment="Right" Style="{StaticResource StyleButtonEdit}" Margin="0,198,50,0" VerticalAlignment="Top" Width="188" Height="37"/>
+        <Button x:Name="DeleteButton" Content="Закрыть штраф" HorizontalAlignment="Right" Style="{StaticResource StyleButtonEdit}" Margin="0,250,50,0" VerticalAlignment="Top" Width="188" Height="37"/>
+        <Button x:Name="ReadButton" Content="Инфомация" HorizontalAlignment="Right" Margin="0,10,50,0" VerticalAlignment="Top" Width="151" Height="37" Visibility="Hidden"/>
+
+
+        <Button x:Name="ExportButton" Content="Экспорт в документ" Style="{StaticResource StyleButtonOk}" HorizontalAlignment="Right" Margin="0,50,50,0" VerticalAlignment="Top" Width="188" Height="37" RenderTransformOrigin="5.418,3.009"/>
+    </Grid>
+</Page>

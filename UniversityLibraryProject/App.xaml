@@ -1,0 +1,135 @@
+﻿<Application x:Class="UniversityLibraryProject.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:UniversityLibraryProject"
+             StartupUri="View/LoginWindow.xaml">
+    <Application.Resources>
+        
+        <!--кнопка записи-->
+        <Style x:Key="StyleButtonOk" TargetType="Button">
+            <Setter Property="Background" Value="#B7D6EA"/>
+            <Setter Property="Foreground" Value="#141921"/>
+            <Setter Property="FontFamily" Value="Verdana"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button" >
+                        <Border Background="{TemplateBinding Background}" CornerRadius="5" >
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        
+        <Style x:Key="NoFocusVisualStyleDatePickerStyle" TargetType="DatePicker">
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        </Style>
+        <!--кнопка не записи-->
+        <Style x:Key="StyleButtonEdit" TargetType="Button">
+            <Setter Property="Background" Value="#F0F0F0"/>
+            <Setter Property="Foreground" Value="#141921"/>
+            <Setter Property="FontFamily" Value="Verdana"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button" >
+                        <Border Background="{TemplateBinding Background}" CornerRadius="5" >
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <!--кнопка выхода-->
+        <Style x:Key="StyleButtonExit" TargetType="Button">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="#141921"/>
+            <Setter Property="FontFamily" Value="Verdana"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="14"/>
+            <!--<Setter Property="BorderBrush" Value="#2671A1"/>-->
+            <Setter Property="BorderBrush" Value="#9BBDD3"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button" >
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5" >
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <!--textbox стиль обводки-->
+        <Style x:Key="StyleTextBoxBorder" TargetType="TextBox">
+            <Setter Property="BorderBrush" Value="#B7D6EA"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+
+        <Style x:Key="StylePasswordBoxBorder" TargetType="PasswordBox">
+            <Setter Property="BorderBrush" Value="#B7D6EA"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+        <!-- Определение стиля для кнопки-стрелочки ComboBox --><!--
+        <Style x:Key="ComboBoxToggleButton" TargetType="ToggleButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <Path x:Name="Arrow" Grid.Column="1" Data="M0,0 L4,4 L8,0 Z" Fill="Black" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="Arrow" Property="Data" Value="M0,4 L4,0 L8,4 Z"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="StylecomboBoxBorder" TargetType="ComboBox">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="#E6F0F6"/>
+            <Setter Property="BorderBrush" Value="#B7D6EA"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid>
+                            <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}">
+                                <ContentPresenter/>
+                            </Border>
+                            <ToggleButton Style="{StaticResource ComboBoxToggleButton}" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>-->
+
+        <Style x:Key="CustomDataGridStyle" TargetType="DataGrid">
+            <Setter Property="Background" Value="#E6F0F6"/>
+            <Setter Property="Foreground" Value="#141921"/>
+            <Setter Property="BorderBrush" Value="#B7D6EA"/>
+            <Setter Property="RowBackground" Value="#F0F0F0"/>
+            <Setter Property="AlternatingRowBackground" Value="#B7D6EA"/>
+        </Style>
+
+    </Application.Resources>
+</Application>

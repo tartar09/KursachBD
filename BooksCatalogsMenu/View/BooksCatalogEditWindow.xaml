@@ -1,0 +1,52 @@
+﻿<Window x:Class="BooksCatalogsMenu.BooksCatalogEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BooksCatalogsMenu"
+        mc:Ignorable="d"
+        Title="{Binding Tittle}" Height="719" Width="432"
+		Visibility="{Binding WindowVisibility, Mode=TwoWay}" Loaded="Window_Loaded">
+
+    <Grid Margin="0,0,0,0">
+        <Label Content="Название" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,23,0,0"/>
+        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource StyleTextBoxBorder}" Height="23" Width="245" Margin="153,25,0,0" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Content="Издательство" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,63,0,0"/>
+        <TextBox HorizontalAlignment="Left" Style="{StaticResource StyleTextBoxBorder}" Height="23" VerticalAlignment="Top" Width="245" Margin="153,65,0,0" Text="{Binding PublishHouseName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Content="Дата" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,104,0,0"/>
+        <DatePicker HorizontalAlignment="Left"  Height="25" VerticalAlignment="Top" Style="{StaticResource NoFocusVisualStyleDatePickerStyle}"  Background="#B7D6EA" Width="245" Margin="153,105,0,0" SelectedDate="{Binding SelectedDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Content="РАСПОЛОЖЕНИЕ" HorizontalAlignment="Left" FontWeight="DemiBold"  VerticalAlignment="Top" Margin="149,162,0,0"/>
+        <Label Content="Номер Зала" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,207,0,0"/>
+        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource StyleTextBoxBorder}" Height="23" Width="245" Margin="153,211,0,0" Text="{Binding StorageNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Content="Номер Стелажа" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,246,0,0"/>
+        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource StyleTextBoxBorder}" Height="23" Width="245" Margin="153,248,0,0" Text="{Binding StandNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Content="Номер Полки" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,285,0,0"/>
+        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource StyleTextBoxBorder}" Height="23" Width="245" Margin="153,287,0,0" Text="{Binding ShelfNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Content="Категория" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,324,0,0"/>
+        <ComboBox HorizontalAlignment="Left" BorderThickness="2" VerticalAlignment="Top" Height="23" Width="245" Margin="153,328,0,0" ItemsSource="{Binding CategoriesList}" SelectedItem="{Binding SelectedCategory}" DisplayMemberPath="Name"/>
+        <Label Content="Категория доступа" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,367,0,0"/>
+        <ComboBox HorizontalAlignment="Left" BorderThickness="2" VerticalAlignment="Top" Width="245" Margin="153,369,0,0" ItemsSource="{Binding TypesList}" SelectedItem="{Binding SelectedType}" DisplayMemberPath="Name"/>
+        <Label Content="Авторы:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,402,0,0"/>
+
+        <DataGrid x:Name="AuthorsTable" Style="{StaticResource CustomDataGridStyle}"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,428,0,0" ItemsSource="{Binding AuthorsList}" SelectionMode="Extended" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" MaxHeight="250" Height="118"
+					  AutoGenerateColumns="False" CanUserAddRows="False" CanUserResizeColumns="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserReorderColumns="False" SelectionChanged="AuthorsTable_SelectionChanged" Width="364">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="25" IsReadOnly="True"/>
+                <DataGridTextColumn Header="ФИО" Binding="{Binding Name}" Width="*" IsReadOnly="True"/>
+                <DataGridTemplateColumn Header="###" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Unchecked="CheckBox_Unchecked" Checked="CheckBox_Checked"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Количество" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,558,0,0"/>
+        <TextBox x:Name="CountTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource StyleTextBoxBorder}" Height="23" Width="245" Margin="153,561,0,0" Text="{Binding Count, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Button HorizontalAlignment="Left" Margin="32,0,0,50" Height="37" Width="366" Style="{StaticResource StyleButtonOk}" VerticalAlignment="Bottom" Content="Запись" Command="{Binding ButtonCommand}"/>
+    </Grid>
+</Window>
